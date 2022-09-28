@@ -1,2 +1,2 @@
-int __declspec(dllexport) add(int, int);
-int __declspec(dllexport) sub(int, int);
+int add(int, int);
+int sub(int, int);

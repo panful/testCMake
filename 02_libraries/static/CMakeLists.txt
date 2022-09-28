@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 project("project_02")
 
 set(target_name "02_libraries")
-set(lib_name "myLib")
+set(lib_name "myStaticLib")
 
 # 是否构建动态库
 set(BUILD_SHARED_LIBS NO)
