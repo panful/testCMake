@@ -1,4 +1,9 @@
 /00_message/build
 /01_helloworld/build
-/02_libraries/build
+/02_libraries/shared/build
+/02_libraries/shared/bin
+/02_libraries/static/build
+/02_libraries/static/lib
+/02_libraries/callShared/build
+/02_libraries/callStatic/build
 /03_package/build
