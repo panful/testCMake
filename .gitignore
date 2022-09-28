@@ -1,1 +1,4 @@
-/build
+/00_message/build
+/01_helloworld/build
+/02_libraries/build
+/03_package/build
