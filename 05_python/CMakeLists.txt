@@ -1,4 +1,6 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.12)
+project(Print_Python_Infomation)
+
 find_package(Python3 COMPONENTS NumPy)# 
 
 if (Python3_FOUND)
