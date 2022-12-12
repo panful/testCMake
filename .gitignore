@@ -11,7 +11,8 @@
 
 /03_package/build
 
-/04_command/build
+/04_command/config/build
+/04_command/command_message/build
 
 /05_python/build
 
