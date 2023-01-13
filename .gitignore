@@ -11,13 +11,24 @@
 
 /03_package/build
 
-/04_command/config/build
-/04_command/command_message/build
+/04_command/add_custom_command/build
+/04_command/add_custom_command/etc
+/04_command/add_custom_target/etc
+/04_command/add_custom_target/build
 
-/05_python/build
+
 
 /06_function/build
 
 /07_list/build
 
 /08_property/build
+
+/09_vs_sln/build
+/09_vs_sln/.vs
+/09_vs_sln/out
+
+/10_install/build
+/10_install/target
+
+/11_platform/build

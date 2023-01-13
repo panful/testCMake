@@ -1,0 +1,15 @@
+
+set(target_name "project_1")
+
+# 只对当前目录以及子目录有效
+
+if(WIN32)
+    set(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -Od -Wall")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /utf-8")
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Zi")
+    set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} /DEBUG:FULL /OPT:REF /OPT:ICF")
+    set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /DEBUG:FULL /OPT:REF /OPT:ICF")
+endif()
+
+add_executable(${target_name} "main.cpp")
+

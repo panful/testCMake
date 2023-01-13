@@ -3,24 +3,24 @@ project ("project_00")
 
 set(target_name "00_message")
 
-#find_package(Qt6 COMPONENTS Core)
+# 查找Qt的Core组件
+find_package(Qt6 COMPONENTS Core)
 
-# 将qmake.exe所在的路径(包括qmake.exe)保存到_my_qmake_execute
-#get_target_property(_my_qmake_execute Qt6::qmake IMPORTED_LOCATION)
-# 将_my_qmake_execute的路径部分(不包括文件名)保存到_my_qt_bin_dir
-#get_filename_component(_my_qt_bin_dir ${_my_qmake_execute} DIRECTORY)
+# 指定查找包的路径
+find_package(Qt6 
+	COMPONENTS
+		Core
+	QUIET
+	PATHS
+		myPaths
+	NO_DEFAULT_PATH
+)
 
-message( STATUS "=====================" )
-message( STATUS "${_my_qmake_execute}" )
-message( STATUS "${_my_qt_bin_dir}" )
-message( STATUS "${PARSE_ARGV}" )
-message( STATUS "$<TARGET_FILE_DIR:${target_name}>") # 构建项目(cmake --build .)才能使TARGET_FILE_DIR生效
-message( STATUS "=====================" )
-
-find_package(MPI)
-if(MPI_FOUND)
-	message("+++++++++++++++++++++++++++")
+message("---------------------------------------")
 	
+find_package(MPI)
+
+if(MPI_FOUND)
 	message("MPI_CXX_INCLUDE_DIRS = ${MPI_CXX_INCLUDE_DIRS}")
 	message("MPI_CXX_LIBRARIES = ${MPI_CXX_LIBRARIES}")
 	message("MPI_COMPILER = ${MPI_COMPILER}")
@@ -34,6 +34,25 @@ if(MPI_FOUND)
 	message("MPIEXEC_MAX_NUMPROCS = ${MPIEXEC_MAX_NUMPROCS}")
 	message("MPIEXEC_PREFLAGS = ${MPIEXEC_PREFLAGS}")
 	message("MPIEXEC_POSTFLAGS = ${MPIEXEC_POSTFLAGS}")
-	
-	message("+++++++++++++++++++++++++++")
+endif()
+
+message("---------------------------------------")
+
+find_package(Python3 COMPONENTS NumPy)
+
+if (Python3_FOUND)
+  message(STATUS "Python3_EXECUTABLE: ${Python3_EXECUTABLE}")
+  message(STATUS "_Python3_EXECUTABLE: ${_Python3_EXECUTABLE}\n")
+ 
+  message(STATUS "Python3_INCLUDE_DIR: ${Python3_INCLUDE_DIR}")
+  message(STATUS "_Python3_INCLUDE_DIR: ${_Python3_INCLUDE_DIR}\n")
+ 
+  message(STATUS "Python3_LIBRARY_DEBUG: ${Python3_LIBRARY_DEBUG}")
+  message(STATUS "_Python3_LIBRARY_DEBUG: ${_Python3_LIBRARY_DEBUG}\n")
+ 
+  message(STATUS "Python3_LIBRARY_RELEASE: ${Python3_LIBRARY_RELEASE}")
+  message(STATUS "_Python3_LIBRARY_RELEASE: ${_Python3_LIBRARY_RELEASE}\n")
+ 
+  message(STATUS "Python3_NumPy_INCLUDE_DIR: ${Python3_NumPy_INCLUDE_DIR}")
+  message(STATUS "_Python3_NumPy_INCLUDE_DIR: ${_Python3_NumPy_INCLUDE_DIR}\n")
 endif()

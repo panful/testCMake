@@ -1,3 +1,11 @@
+# windows:
+# mkdir build && cd build
+# cmake ..
+# cmake --install .
+# cmake --build . 会执行add_custom_command
+# add_custom_command 命令可以用来将生成的库文件拷贝到vs生成的debug目录下
+
+
 cmake_minimum_required(VERSION 3.12)
 project("project_04")
 set(target_name "04_command")
@@ -65,4 +73,26 @@ add_custom_command(TARGET ${target_name}
 	POST_BUILD
 	COMMAND ${CMAKE_COMMAND} -E
 		echo "=======End========"
+)
+
+add_custom_command(TARGET ${target_name}
+		POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E
+		copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/build ${CMAKE_CURRENT_SOURCE_DIR}/etc/mybuild
+		PRE_BUILD
+	COMMAND ${CMAKE_COMMAND} -E 
+		# 拷贝config目录下的所有文件(包括子目录的文件，不包括config文件夹)到etc目录下
+		copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/config ${CMAKE_CURRENT_SOURCE_DIR}/etc
+# add_custom_command 内部不能用if()endif()
+#if(WIN32)
+		POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E
+		copy ${CMAKE_CURRENT_SOURCE_DIR}/build/$<IF:$<CONFIG:Debug>,Debug,Release>/$<TARGET_FILE_NAME:${target_name}> ${CMAKE_CURRENT_SOURCE_DIR}/etc
+#endif()
+	COMMAND ${CMAKE_COMMAND} -E 
+		# 拷贝log.txt文件到etc目录下
+		copy ${CMAKE_CURRENT_SOURCE_DIR}/log.txt ${CMAKE_CURRENT_SOURCE_DIR}/etc
+		# 拷贝生成的目标文件到目标文件所在目录下的copy文件夹中（如果含有相同的文件则不拷贝）
+	COMMAND ${CMAKE_COMMAND} -E
+		copy_if_different $<TARGET_FILE:${target_name}> $<TARGET_FILE_DIR:${target_name}>/copy/${target_name}.exe
 )
