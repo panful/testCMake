@@ -11,12 +11,10 @@
 
 /03_package/build
 
-/04_command/add_custom_command/build
-/04_command/add_custom_command/etc
-/04_command/add_custom_target/etc
-/04_command/add_custom_target/build
-
-
+/04_command/01_add_custom_command/build
+/04_command/01_add_custom_command/etc
+/04_command/02_add_custom_target/build
+/04_command/02_add_custom_target/etc
 
 /06_function/build
 

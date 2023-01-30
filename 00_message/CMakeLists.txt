@@ -15,10 +15,10 @@ message("CMAKE_CURRENT_SOURCE_DIR       = ${CMAKE_CURRENT_SOURCE_DIR}" )
 
 message( "-----------------------------------------------" )
 
-message(STATUS 			"CMake 状态, 带状态的CMake信息")
-message(WARNING 		"CMake 警告, 会继续执行")
-message(AUTHOR_WARNING 	"CMake 警告 (dev), 会继续执行")
-message(SEND_ERROR 		"CMake 错误, 继续执行，但是会跳过生成的步骤")
-message(FATAL_ERROR 	"CMake 错误, 终止所有处理过程")
+message(STATUS          "CMake 状态, 带状态的CMake信息")
+message(WARNING         "CMake 警告, 会继续执行")
+message(AUTHOR_WARNING  "CMake 警告 (dev), 会继续执行")
+message(SEND_ERROR      "CMake 错误, 继续执行，但是会跳过生成的步骤")
+message(FATAL_ERROR     "CMake 错误, 终止所有处理过程")
 
 message( "-----------------------------------------------" )
