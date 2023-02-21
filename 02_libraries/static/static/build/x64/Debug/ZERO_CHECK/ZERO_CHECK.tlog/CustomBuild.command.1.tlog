@@ -1,0 +1,10 @@
+^C:\USERS\YANGPAN\SOURCE\REPOS\CMAKE\TESTCMAKE\02_LIBRARIES\STATIC\BUILD\CMAKEFILES\B52BC2AB33C6EF2485CAE9E787FBF09C\GENERATE.STAMP.RULE
+setlocal
+C:\XunLei\cmake-3.21.4-windows-x86_64\bin\cmake.exe -SC:/Users/yangpan/source/repos/CMake/testCMake/02_libraries/static -BC:/Users/yangpan/source/repos/CMake/testCMake/02_libraries/static/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/yangpan/source/repos/CMake/testCMake/02_libraries/static/build/project_02.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

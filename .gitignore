@@ -2,12 +2,16 @@
 
 /01_helloworld/build
 
-/02_libraries/shared/build
-/02_libraries/shared/bin
-/02_libraries/static/build
-/02_libraries/static/lib
-/02_libraries/callShared/build
-/02_libraries/callStatic/build
+/02_libraries/shared/genShared/build
+/02_libraries/shared/genShared/bin
+
+/02_libraries/static/genStatic/build
+/02_libraries/static/genStatic/lib
+
+/02_libraries/shared/callShared/build
+/02_libraries/static/callStatic/build
+
+/02_libraries/interface/build
 
 /03_package/build
 
