@@ -8,21 +8,17 @@ set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/target)
 # 生成可执行文件
 add_executable(${target_name} main.cpp)
 
-
 # 安装file.txt文件到target/files目录下
-install(FILES  file.txt DESTINATION ./files)
+install(FILES file.txt DESTINATION ./files)
+
+# 在build路径下执行 "cmake .."命令时，会将file_install.txt文件拷贝到build目录下的files文件夹内
+file(INSTALL file_install.txt DESTINATION ./files)
 
 # 将整个f1文件夹安装到target/dir目录下，包括f1
 install(DIRECTORY f1 DESTINATION ./dir)
 
 # 以递归方式获取当前目录下的f2文件夹中的所有文件
 FILE(GLOB_RECURSE SRCS ${CMAKE_CURRENT_SOURCE_DIR}/f2/*)
-
-# 子文件夹中的文件或文件夹不会被获取
-#FILE(GLOB SRCS ${CMAKE_CURRENT_SOURCE_DIR}/f2/*)
-
-# 文件名中带.的所有文件
-#FILE(GLOB SRCS ${CMAKE_CURRENT_SOURCE_DIR}/f2/*.*)
 
 # 将文件名（包括路径）加入到list
 list(APPEND SRCS_LIST ${SRCS})

@@ -29,7 +29,11 @@
 
 - 拷贝文件/目录到生成目录
 
-## 05_
+## 05_file
+
+- 获取文件名
+
+- 拷贝文件的几种方式 `file(COPY)` `configure_file()` `add_custom_target() add_custom_command()`
 
 ## 06_function
 
@@ -59,6 +63,7 @@
 - 安装生成文件到指定目录
 - 安装资源文件/目录到指定目录
 - 获取指定目录下的所有文件
+- `file(INSTALL SRCS DESTINATION PATH)`拷贝文件
 
 ## 11_platform
 

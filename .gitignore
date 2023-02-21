@@ -20,6 +20,8 @@
 /04_command/02_add_custom_target/build
 /04_command/02_add_custom_target/etc
 
+/05_file/build
+
 /06_function/build
 
 /07_list/build
