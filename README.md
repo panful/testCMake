@@ -16,6 +16,8 @@
 - 生成静态库
 - 调用动态库
 - 调用静态库
+- 生成INTERFACE
+- 调用INTERFACE
 
 ## 03_package
 
