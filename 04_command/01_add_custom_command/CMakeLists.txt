@@ -7,9 +7,11 @@
 
 #---------------------------------------------------------------------
 
-# add_custom_command 内部不能用if()endif()
-#if(WIN32)
-#endif()
+# add_custom_command 内部不能用if()，也不能使用foreach()
+# 可以使用if()或foreach()将add_custom_command包裹起来，例如： 
+# foreach() 
+#   add_custom_command... 
+# endforeach()
 
 #---------------------------------------------------------------------
 
