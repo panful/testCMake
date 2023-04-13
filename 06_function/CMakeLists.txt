@@ -10,7 +10,6 @@ func1()
 message("------------------")
 
 #--------------------------------------------------------
-
 function(func2 arg)
 	message("arg: ${arg}")
 endfunction()
@@ -19,7 +18,6 @@ func2(this_is_my_arg)
 message("------------------")
 
 #--------------------------------------------------------
-
 function(func3)
 	message("argc: ${ARGC}    argv: ${ARGV}    argn: ${ARGN}")
 endfunction()
@@ -31,7 +29,6 @@ func3(arg1,arg2)# 不能用','分隔参数
 message("------------------")
 
 #--------------------------------------------------------
-
 # 类似c++的可变参数，ARGN是个list
 function(func4 arg)
 	message("arg: ${arg}    argn: ${ARGN}")
@@ -41,7 +38,6 @@ func4(the_arg other_arg1 other_arg2)
 message("------------------")
 
 #--------------------------------------------------------
-
 function(func5)
 	#--------1-----------
 	#set(noValues"")
@@ -102,7 +98,6 @@ func5(ARG_1 aa ARG_2 cc dd ee)	#ARG_2之后的多个参数被解析为多参数
 func5(ARG_2 x y z ARG_1 aaa)	#ARG_1和ARG_2可以打乱顺序
 
 #--------------------------------------------------------
-
 function(func6)
 	set(prefix ARG)
 	set(noValues NOV1 NOV2)
@@ -158,3 +153,77 @@ func6(NOV2 n1 n2
 ARG1 MyApp2
 ARG3 xx yy zz
 )
+
+#--------------------------------------------------------------------------------------
+# 解析参数
+function(MyFunction)
+	# 定义参数解析的方式
+	cmake_parse_arguments(
+		PARSE_ARGV 0 theArgs
+		"" "InArg" "OutArgs"
+	)
+
+	# 参数解析错误直接结束
+	if(the_arg_UNPARSED_ARGUMENTS)
+		message(FATAL_ERROR "------------- wrong of function args -------------")
+	endif()
+
+	# 单个参数
+	if(theArgs_InArg)
+		message("singleValues: ${theArgs_InArg}")
+	endif()
+	
+	# 多个参数
+	if(theArgs_OutArgs)
+		message("multiValues: ${theArgs_OutArgs}")
+	endif()
+
+	# 获取OutArgs参数的长度
+	list(LENGTH theArgs_OutArgs the_length)
+	message("length of OutArgs: ${the_lenght}")
+
+	# 如果OutArgs的参数长度等于2
+	if(the_length EQUAL 2)
+		message("OutArgs have two args")
+
+		# 访问OutArgs指定位置的元素
+		list(GET theArgs_OutArgs 0 _arg0)
+		list(GET theArgs_OutArgs 1 _arg1)
+
+		message("arg 0: ${_arg0}")
+		message("arg 1: ${_arg1}")
+
+	endif()
+
+endfunction(MyFunction)
+
+# 调用函数
+MyFunction(InArg "this is in ARGS" OutArgs "out1" "out2")
+
+#--------------------------------------------------------------------------------------
+# 将结果赋值给参数
+# CMake不能返回值，所以只能类似C++传入引用的方式获取函数执行结果
+function(MyFunction2)
+	cmake_parse_arguments(
+		PARSE_ARGV 0 theArgs
+		"" "InArg" "OutArgs"
+	)
+
+	if(the_arg_UNPARSED_ARGUMENTS)
+		message(FATAL_ERROR "------------- wrong of function args -------------")
+	endif()
+
+	if(theArgs_InArg)
+		message("singleValues: ${theArgs_InArg}")
+	endif()
+	
+	# 将结果赋值给参数
+	if(theArgs_OutArgs)
+		set(${theArgs_OutArgs} "function output" PARENT_SCOPE)
+	endif()
+
+endfunction(MyFunction2)
+
+# 调用函数
+MyFunction2(InArg "function 2" OutArgs OUT_ARG)
+message("this is function return value: ${OUT_ARG}")
