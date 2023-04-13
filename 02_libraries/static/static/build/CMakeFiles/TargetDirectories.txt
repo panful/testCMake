@@ -1,3 +1,0 @@
-C:/Users/yangpan/source/repos/CMake/testCMake/02_libraries/static/build/CMakeFiles/myStaticLib.dir
-C:/Users/yangpan/source/repos/CMake/testCMake/02_libraries/static/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/yangpan/source/repos/CMake/testCMake/02_libraries/static/build/CMakeFiles/ZERO_CHECK.dir

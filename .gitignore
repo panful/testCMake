@@ -4,11 +4,10 @@
 
 /02_libraries/shared/genShared/build
 /02_libraries/shared/genShared/bin
+/02_libraries/shared/callShared/build
 
 /02_libraries/static/genStatic/build
 /02_libraries/static/genStatic/lib
-
-/02_libraries/shared/callShared/build
 /02_libraries/static/callStatic/build
 
 /02_libraries/interface/build
@@ -36,3 +35,5 @@
 /10_install/target
 
 /11_platform/build
+
+/12_cpm/build
