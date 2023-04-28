@@ -12,13 +12,20 @@ project("find_package")
 
 #----------------------------------------------------------------------------
 # 设置 PackageName_DIR 变量查找包
-# 查找包的cmake文件名必须是：PackageNameConfig.cmake 即 XXXConfig.cmake
+# 包的cmake文件名必须是：PackageNameConfig.cmake 即 XXXConfig.cmake
 # set(TestPackage_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../config")
 # find_package(TestPackage)
 
 #----------------------------------------------------------------------------
-# 设置 CMAKE_MODULE_PATH 包的cmake文件名必须是 FindPackageName.cmake 即 FindXXX.cmake
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/../module)
+# 设置 CMAKE_MODULE_PATH变量查找包
+# 包的cmake文件名必须是 FindPackageName.cmake 即 FindXXX.cmake
+# set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/../module)
+# find_package(TestPackage)
+
+#----------------------------------------------------------------------------
+# 设置 CMAKE_PREFIX_PATH 变量查找包
+# 包的cmake文件名必须是：PackageNameConfig.cmake 即 XXXConfig.cmake
+set(CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../config")
 find_package(TestPackage)
 
 
