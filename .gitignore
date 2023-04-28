@@ -12,7 +12,9 @@
 
 /02_libraries/interface/build
 
-/03_package/build
+/03_package/01_find_package/cmake/build
+/03_package/02_3rdparty/build
+/03_package/03_customPackage/interface/build
 
 /04_command/01_add_custom_command/build
 /04_command/01_add_custom_command/etc
