@@ -14,7 +14,10 @@
 
 /03_package/01_find_package/cmake/build
 /03_package/02_3rdparty/build
-/03_package/03_customPackage/interface/build
+/03_package/03_customPackage/createPackage/build
+/03_package/03_customPackage/createPackage/install
+/03_package/03_customPackage/usePackage/build
+
 
 /04_command/01_add_custom_command/build
 /04_command/01_add_custom_command/etc
@@ -33,8 +36,10 @@
 /09_vs_sln/.vs
 /09_vs_sln/out
 
-/10_install/build
-/10_install/target
+/10_install/01_target/build
+/10_install/01_target/target
+/10_install/02_other/build
+/10_install/02_other/target
 
 /11_platform/build
 
