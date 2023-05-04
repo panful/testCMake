@@ -62,25 +62,25 @@ message("sort list1: ${list1}")
 message(STATUS "--------------------")
 # 遍历list
 foreach(var IN LISTS list1)
-	message(STATUS "${var}")
+    message(STATUS "${var}")
 endforeach()
 
 message(STATUS "--------------------")
 # 遍历多个list
 foreach(var1 var2 IN ZIP_LISTS list1 list2)
-	message(STATUS "var1: ${var1}    var2: ${var2}") 
+    message(STATUS "var1: ${var1}    var2: ${var2}") 
 endforeach()
 
 message(STATUS "--------------------")
 # 遍历多个list，只用一个变量
 foreach(var IN ZIP_LISTS list1 list3)
-	message(STATUS "var1: ${var_0}    var2: ${var_1}") 
+    message(STATUS "var1: ${var_0}    var2: ${var_1}") 
 endforeach()
 
 message(STATUS "--------------------")
 # 遍历多个list，list的长度不一样
 foreach(var1 var2 IN ZIP_LISTS list1 list3)
-	message(STATUS "var1: ${var1}    var2: ${var2}") 
+    message(STATUS "var1: ${var1}    var2: ${var2}") 
 endforeach()
 
 #---------------------------------------------------------
@@ -88,27 +88,27 @@ endforeach()
 message(STATUS "--------------------")
 # 中断循环
 foreach(var IN LISTS list3)
-	message(STATUS "${var}")
-	
-	if(var STREQUAL "bb")
-		break()
-	endif()
+    message(STATUS "${var}")
+    
+    if(var STREQUAL "bb")
+        break()
+    endif()
 endforeach()
 
 message(STATUS "--------------------")
 # 跳过指定成员
 foreach(var IN LISTS list3)
-	if(var STREQUAL "bb")
-		continue()
-	endif()
-	
-	message(STATUS "${var}")
+    if(var STREQUAL "bb")
+        continue()
+    endif()
+    
+    message(STATUS "${var}")
 endforeach()
 
 message(STATUS "--------------------")
 while(list1)
-	list(POP_FRONT list1 list1_front)
-	message(STATUS "while get list1: ${list1_front}")
+    list(POP_FRONT list1 list1_front)
+    message(STATUS "while get list1: ${list1_front}")
 endwhile()
 
 message(STATUS "===== test_list =====")

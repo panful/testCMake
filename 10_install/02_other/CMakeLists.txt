@@ -25,8 +25,8 @@ list(APPEND SRCS_LIST ${SRCS})
 
 # 遍历list安装文件
 foreach(__file__ IN LISTS SRCS_LIST)
-	MESSAGE(STATUS "=== ${__file__}")
-	install(FILES ${__file__} DESTINATION ./files2)
+    MESSAGE(STATUS "=== ${__file__}")
+    install(FILES ${__file__} DESTINATION ./files2)
 endforeach()
 
 # 和上面的语句效果一样，只不过如果安装文件太多会报错

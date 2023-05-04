@@ -2,6 +2,6 @@
 
 int main()
 {
-	std::cout<<"test\n";
-	system("pause");
+    std::cout<<"test\n";
+    system("pause");
 }

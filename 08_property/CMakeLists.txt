@@ -9,11 +9,11 @@ add_executable(${target_name} "main.cpp")
 #-----------------------------------------------
 # 设置目标属性
 set_property(TARGET ${target_name}
-	PROPERTY _MY_PROPERTY_1_ val1 val2 val3
+    PROPERTY _MY_PROPERTY_1_ val1 val2 val3
 )
 
 get_property(resultVal_1 TARGET ${target_name}
-	PROPERTY _MY_PROPERTY_1_ 
+    PROPERTY _MY_PROPERTY_1_ 
 )
 
 message("====== ${resultVal_1}")
@@ -21,11 +21,11 @@ message("====== ${resultVal_1}")
 #-----------------------------------------------
 # 设置源码属性
 set_property(SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
-	PROPERTY _MY_PROPERTY_2_ cpp_file
+    PROPERTY _MY_PROPERTY_2_ cpp_file
 )
 
 get_property(resultVal_2 SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
-	PROPERTY _MY_PROPERTY_2_
+    PROPERTY _MY_PROPERTY_2_
 )
 
 message("====== ${resultVal_2}")
@@ -41,7 +41,7 @@ message("====== ${resultVal_3}")
 #-----------------------------------------------
 # 设置源码属性
 set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
-	PROPERTIES _MY_PROPERTY_4_ source_val
+    PROPERTIES _MY_PROPERTY_4_ source_val
 )
 
 get_source_file_property(resultVal_4 ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp _MY_PROPERTY_4_)

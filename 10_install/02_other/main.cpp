@@ -2,6 +2,6 @@
 
 int main()
 {
-	std::cout<<"install\n";
-	system("pause");
+    std::cout<<"install\n";
+    system("pause");
 }
