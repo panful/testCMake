@@ -58,3 +58,7 @@
 /12_cpm/build
 
 /13_module/build
+
+/14_multiTarget/build
+/14_multiTarget/target
+/14_multiTarget/target_custom

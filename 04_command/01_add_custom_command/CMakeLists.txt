@@ -136,6 +136,13 @@ add_custom_command(TARGET ${target_name}
     COMMAND ${CMAKE_COMMAND} -E
         # 拷贝生成的目标文件到目标文件所在目录下的copy文件夹中（如果含有相同的文件则不拷贝）
         copy_if_different $<TARGET_FILE:${target_name}> $<TARGET_FILE_DIR:${target_name}>/copy/${target_name}.exe
+
+        # 文件不相同时拷贝，不需要指定目标文件名，也不需要指定源文件的完整文件名（不需要包含路径）
+        # chdir用于改变当前的工作目录，即跳转到需要拷贝的源文件目录
+        # FILE_NAME 是需要拷贝的文件名（不包括路径）
+        # DIR 是目标目录
+    #COMMAND ${CMAKE_COMMAND} -E
+    #    chdir "MyPath" ${CMAKE_COMMAND} -E copy_if_different "FILE_NAME" "DIR"
 )
 
 #---------------------------------------------------------------------
