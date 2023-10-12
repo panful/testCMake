@@ -2,9 +2,12 @@
 
 /01_helloworld/build
 
-/02_libraries/shared/genShared/build
-/02_libraries/shared/genShared/bin
-/02_libraries/shared/callShared/build
+/02_libraries/shared/create/build
+/02_libraries/shared/create/bin
+/02_libraries/shared/call/build
+/02_libraries/shared/call/include
+/02_libraries/shared/call/lib
+/02_libraries/shared/call/target
 
 /02_libraries/static/genStatic/build
 /02_libraries/static/genStatic/lib
