@@ -24,6 +24,18 @@
 /02_libraries/exe_shared_static/static/plus/build
 /02_libraries/exe_shared_static/static/sub/build
 
+/02_libraries/exe_static_shared/exe/lib
+/02_libraries/exe_static_shared/exe/include
+/02_libraries/exe_static_shared/exe/target
+/02_libraries/exe_static_shared/exe/build
+
+/02_libraries/exe_static_shared/shared/build
+
+/02_libraries/exe_static_shared/static/build
+/02_libraries/exe_static_shared/static/shared_bin
+/02_libraries/exe_static_shared/static/shared_include
+/02_libraries/exe_static_shared/static/shared_lib
+
 /03_package/01_find_package/cmake/build
 /03_package/02_3rdparty/build
 /03_package/03_customPackage/createPackage/build
