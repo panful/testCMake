@@ -1,6 +1,5 @@
-#include "mymath.h"
-#include "sub.h"
-#include "plus.h"
+#include <mymath.h>
+#include <add_sub.h>
 
 MyMath::MyMath(int a, int b)
     : m_number0(a), m_number1(b)
@@ -9,7 +8,7 @@ MyMath::MyMath(int a, int b)
 
 int MyMath::Add() const
 {
-    return plus(m_number0, m_number1);
+    return add(m_number0, m_number1);
 }
 
 int MyMath::Sub() const

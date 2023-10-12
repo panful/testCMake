@@ -12,17 +12,17 @@
 
 /02_libraries/interface/build
 
-/02_libraries/exe_shared_static/exe/bin
+/02_libraries/exe_shared_static/exe/target
 /02_libraries/exe_shared_static/exe/build
 /02_libraries/exe_shared_static/exe/include
 /02_libraries/exe_shared_static/exe/lib
 
 /02_libraries/exe_shared_static/shared/build
 /02_libraries/exe_shared_static/shared/include
-/02_libraries/exe_shared_static/shared/lib
+/02_libraries/exe_shared_static/shared/static_lib
+/02_libraries/exe_shared_static/shared/static_include
 
-/02_libraries/exe_shared_static/static/plus/build
-/02_libraries/exe_shared_static/static/sub/build
+/02_libraries/exe_shared_static/static/build
 
 /02_libraries/exe_static_shared/exe/lib
 /02_libraries/exe_static_shared/exe/include
