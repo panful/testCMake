@@ -9,9 +9,12 @@
 /02_libraries/shared/call/lib
 /02_libraries/shared/call/target
 
-/02_libraries/static/genStatic/build
-/02_libraries/static/genStatic/lib
-/02_libraries/static/callStatic/build
+/02_libraries/static/create/build
+/02_libraries/static/create/lib
+/02_libraries/static/call/build
+/02_libraries/static/call/lib
+/02_libraries/static/call/target
+/02_libraries/static/call/include
 
 /02_libraries/interface/build
 
@@ -44,7 +47,6 @@
 /03_package/03_customPackage/createPackage/build
 /03_package/03_customPackage/createPackage/install
 /03_package/03_customPackage/usePackage/build
-
 
 /04_command/01_add_custom_command/build
 /04_command/01_add_custom_command/etc
