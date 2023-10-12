@@ -9,6 +9,7 @@
 ## 01_helloworld
 
 * CMake生成C++可执行文件
+* 设置生成路径
 
 ## 02_libraries
 
@@ -67,8 +68,14 @@
 - `file(INSTALL SRCS DESTINATION PATH)`拷贝文件
 
 ## 11_platform
-
 - 判断当前系统类型
 
 ## 12_cpm
 - 包管理器
+- 从github、gitlab下载包
+## 13
+- include别的cmake文件，调用别的cmake文件中的函数
+## 14
+- 一个Project，多个target，如果Project设置了某些属性，子target只要不重新设置都会使用该属性，子target也可以重新设置覆盖该属性
+## 15
+- 通过一个cmake文件编译所有子目录，并生成所有子目录中的项目
