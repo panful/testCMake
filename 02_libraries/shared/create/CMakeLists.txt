@@ -32,8 +32,8 @@ target_include_directories(${target_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/in
 ##############################################################################################
 set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/../call)
 install(TARGETS ${target_name}
-    RUNTIME DESTINATION target # Widnows: *.dll  Linux: 无文件输出
-    ARCHIVE DESTINATION arc    # Windows: *.lib  Linux: 无文件输出
-    LIBRARY DESTINATION lib    #                 Linux: lib*.so
+    RUNTIME DESTINATION target # Widnows: *.dll     Linux: 无文件输出
+    ARCHIVE DESTINATION lib    # Windows: *.lib     Linux: 无文件输出
+    LIBRARY DESTINATION lib    # Windows: 无文件输出 Linux: lib*.so
 )
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/include/demo.h" DESTINATION include)
