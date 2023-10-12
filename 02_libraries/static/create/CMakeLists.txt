@@ -32,9 +32,10 @@ target_include_directories(${target_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/in
 
 ##############################################################################################
 set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/../call)
+set_target_properties(${target_name} PROPERTIES PUBLIC_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/include/demo.h")
 install(TARGETS ${target_name}
     RUNTIME DESTINATION target # Windows: 无文件输出 Linux: 无文件输出
     ARCHIVE DESTINATION lib    # Windows: *.lib     Linux: 无文件输出
     LIBRARY DESTINATION lib    # Windows: 无文件输出 Linux: lib*.a
+    PUBLIC_HEADER DESTINATION include
 )
-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/include/demo.h" DESTINATION include)
