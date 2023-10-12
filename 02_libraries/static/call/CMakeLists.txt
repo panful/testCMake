@@ -4,7 +4,12 @@ project("project_02")
 set(target_name "callStatic")
 
 # 设置可执行文件的生成目录
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_CURRENT_SOURCE_DIR}/target)
+# Linux下带DEBUG或RELEASE的属性无效
+if(WIN32)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_CURRENT_SOURCE_DIR}/target)
+else()
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/target)
+endif()
 
 # 构建可执行文件
 add_executable(${target_name} "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp")
