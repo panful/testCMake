@@ -18,3 +18,5 @@ cmake ..
 cmake --build .
 ../target/callStatic.exe
 ```
+## 三、其他
+- Windows下使用Debug的可执行程序调用Release的静态库，会有警告：warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突

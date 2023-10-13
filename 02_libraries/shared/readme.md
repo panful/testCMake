@@ -20,3 +20,5 @@ cmake ..
 cmake --build .
 ../target/callShared.exe
 ```
+## 三、其他
+- Windows下使用Debug的可执行文件调用Release的动态库不会有报错信息

@@ -1,6 +1,7 @@
-#include "test.h"
+#include <test.h>
+#include <iostream>
 
-void TestFunc()
+void Test::Func() const
 {
-    std::cout << "TestFunc\n";
+    std::cout << "Test::Func()\n";
 }

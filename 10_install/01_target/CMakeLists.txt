@@ -1,17 +1,27 @@
 cmake_minimum_required(VERSION 3.12)
 project("myproject")
 
-set(lib_name "mySharedLib")
-SET(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/target)
+set(target_name "test_install")
 
-add_library(${lib_name} SHARED "include/test.h" "src/test.cpp")
+# 设置安装路径的前缀
+set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
 
-# 添加头文件路径，target_include_directories必须在构建${lib_name}之后
-target_include_directories(${lib_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+# 添加需要生成的动态库
+add_library(${target_name} SHARED "${CMAKE_CURRENT_SOURCE_DIR}/src/test.cpp")
+target_include_directories(${target_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-install(TARGETS ${lib_name}
-    LIBRARY DESTINATION ./lib
-    ARCHIVE DESTINATION ./arc   # 动态库生成*.lib必须在导出函数或类之前使用__declspec(dllexport)修饰（windows）
-    RUNTIME DESTINATION ./run
-    #PUBLIC_HEADER DESTINATION include
+# 设置需要安装的头文件
+set(public_header_ "${CMAKE_CURRENT_SOURCE_DIR}/include/test.h")
+set_target_properties(${target_name} PROPERTIES PUBLIC_HEADER ${public_header_})
+
+# 设置需要安装的资源文件
+set(resource_ "${CMAKE_CURRENT_SOURCE_DIR}/resources/readme.md")
+set_target_properties(${target_name} PROPERTIES RESOURCE ${resource_})
+
+install(TARGETS ${target_name}
+    LIBRARY DESTINATION lib             # 无
+    ARCHIVE DESTINATION arc             # *.lib
+    RUNTIME DESTINATION run             # *.dll
+    PUBLIC_HEADER DESTINATION include   # public_header_
+    RESOURCE DESTINATION res            # resource_
 )
