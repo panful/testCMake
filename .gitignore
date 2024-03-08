@@ -72,7 +72,11 @@
 
 /11_platform/build
 
-/12_cpm/build
+/12_external/cpm/build
+/12_external/ExternalProject/build
+/12_external/ExternalProject/gtest_dir
+/12_external/FetchContent/build
+/12_external/FetchContent/spdlog_dir
 
 /13_module/build
 

@@ -55,7 +55,8 @@
 ## 11_platform
 - 判断当前系统类型
 
-## 12_cpm
+## 12_external
+- 导入外部项目
 - 包管理器
 - 从github、gitlab下载包
 ## 13
