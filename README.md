@@ -59,9 +59,16 @@
 - 导入外部项目
 - 包管理器
 - 从github、gitlab下载包
-## 13
+## 13_module
 - include别的cmake文件，调用别的cmake文件中的函数
-## 14
+## 14_multiTarget
 - 一个Project，多个target，如果Project设置了某些属性，子target只要不重新设置都会使用该属性，子target也可以重新设置覆盖该属性
-## 15
+## 15_traverse_target
 - 通过一个cmake文件编译所有子目录，并生成所有子目录中的项目
+## 16_ctest
+- 单元测试
+- [GTest GMock](https://github.com/google/googletest)
+- [gtest_gmock_cmake_example](https://github.com/dacorvo/gtest-cmake-example)
+- [gmock的使用](https://www.cnblogs.com/welkinwalker/archive/2011/11/29/2267225.html)
+- [Catch2](https://github.com/catchorg/Catch2)
+- [C++怎么做好单元测试](https://www.jianshu.com/p/9b2d0ed18211)

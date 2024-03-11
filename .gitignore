@@ -1,3 +1,5 @@
+/.vscode
+
 /00_message/build
 
 /01_helloworld/build
@@ -88,3 +90,5 @@
 /15_traverse_target/target_debug
 /15_traverse_target/target_release
 /15_traverse_target/install
+
+/16_ctest/build
