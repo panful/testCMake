@@ -11,6 +11,8 @@
 /02_libraries/shared/call/lib
 /02_libraries/shared/call/target
 
+/02_libraries/alias/build
+
 /02_libraries/static/create/build
 /02_libraries/static/create/lib
 /02_libraries/static/call/build
