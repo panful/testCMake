@@ -51,6 +51,9 @@
 /03_package/03_customPackage/createPackage/build
 /03_package/03_customPackage/createPackage/install
 /03_package/03_customPackage/usePackage/build
+/03_package/04_component/create/build
+/03_package/04_component/use/build
+/03_package/04_component/use/thirdParty
 
 /04_command/01_add_custom_command/build
 /04_command/01_add_custom_command/etc
