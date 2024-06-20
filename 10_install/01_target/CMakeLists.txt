@@ -12,7 +12,7 @@ target_include_directories(${target_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/in
 
 # 设置需要安装的头文件
 set(public_header_ "${CMAKE_CURRENT_SOURCE_DIR}/include/test.h")
-set_target_properties(${target_name} PROPERTIES PUBLIC_HEADER ${public_header_})
+set_target_properties(${target_name} PROPERTIES PUBLIC_HEADER ${public_header_}) # 如果包含多个文件，${public_header_} 需要带引号 例如："${public_header_}"
 
 # 设置需要安装的资源文件
 set(resource_ "${CMAKE_CURRENT_SOURCE_DIR}/resources/readme.md")
