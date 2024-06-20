@@ -54,6 +54,7 @@
 /03_package/04_component/create/build
 /03_package/04_component/use/build
 /03_package/04_component/use/thirdParty
+/03_package/05_component_self/build
 
 /04_command/01_add_custom_command/build
 /04_command/01_add_custom_command/etc

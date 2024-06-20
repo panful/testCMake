@@ -23,9 +23,10 @@ endif()
 
 add_executable(${target_name} ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
 
-target_link_directories(${target_name} PRIVATE ${Math_LIBRARIES_DIR})
+# 使用 Plus Sub 链接，还需要指定库的路径
+# target_link_directories(${target_name} PRIVATE ${Math_LIBRARIES_DIR})
 
-# 使用 Math::Plus Math::Sub 链接，就不再需要指定头文件路径
+# 使用 Math::Plus Math::Sub 链接，就不再需要指定头文件路径，也不再需要指定库的路径
 target_link_libraries(${target_name} PRIVATE ${Math_LIBRARIES})
 
 # 使用 Plus Sub 链接，还需要指定头文件路径，否则找不到对应的头文件
